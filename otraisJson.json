@@ -1,0 +1,21 @@
+{
+    "Vards": "Borishka",
+    "Vecums": 98,
+    "Dzivs": false,
+    "NeDzivs": true,
+    "Berni": [
+        "Gatis",
+        "Annasteisha"
+    ],
+    "Dzivnieki": null,
+    "Masinas": [
+        {
+            "Modelis": "T34",
+            "Gads": 1976
+        },
+        {
+            "Modelis": "Audi A6",
+            "Gads": 2010
+        }
+    ]
+}
