@@ -1,4 +1,5 @@
 import json
+from operator import truediv
 while True:
     vardss = input('ievadiet vardu: ')
     if vardss.strip() == "" or vardss.isdigit() == True:
@@ -13,7 +14,7 @@ while True:
         break
 while True:
     vecumss = input('ievadiet vecumu:')
-    if len(vecumss) <0 or len(vecumss) >100 or vecumss.isdigit() == False:
+    if len(vecumss) <1 or len(vecumss) >3 or vecumss.isdigit() == False:
         continue
     else:
         break
@@ -31,11 +32,23 @@ vardnica[vardss] = {
     'Telefona Numurs':tell
 }
 
+with open("ievaktieDati.json", "r", encoding="utf-8") as fails:
+    json_data = json.load(fails)
+
+    ir_saraksta = False
+    for key in json_data.keys():
+        if key == vardss:
+            break
+        if key != vardss:
+            ir_saraksta = True
+
+if ir_saraksta== False:
+    print('Vards ir saraksta')
+else:
+    json_data[vardss]=vardnica
+
 def dati(vards,uzvards,vecums,tel):
     with open('ievaktieDati.json','w',encoding='utf-8') as file:
-        json.dump(vardnica,file,indent=4,ensure_ascii=False)
+        json.dump(json_data,file,indent=4,ensure_ascii=False)
         
-
 dati(vardss,uzvardss,vecumss,tell)
-
-
