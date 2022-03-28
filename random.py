@@ -1,5 +1,4 @@
 import random
-import json
 import sqlite3
 
 while True:
@@ -75,9 +74,9 @@ while True:
 
     vecums = input("Ievadi savu vecumu:")
     if vecums.isdigit() == True:
-        continue
-    else:
         break
+    else:
+        continue
 
 print(vecums)
 
@@ -93,14 +92,17 @@ while True:
 
 print(vards)
 
-with open("ievaktieDati.json","r", encoding="utf-8") as fails:
-    json_data = json.load(fails)
-
 db = sqlite3.connect("test.db")
 
-dati = db.execute("Vecums * FROM Vārds")
-for rinda in dati:
-    print("Vecums:", rinda[0])
-    print("Vārds:", rinda[1], "/n")
+db.execute("""CREATE TABLE IF NOT EXISTS test
+    (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    vards TEXT NOT NULL,
+    vecums INT NOT NULL
+)""")
 
-db.close()
+db.execute("""INSERT INTO test
+    (vards,vecums)
+    VALUES (:vards,:vecums)
+""",{'vards':vards,'vecums':vecums})
+
+db.commit()
