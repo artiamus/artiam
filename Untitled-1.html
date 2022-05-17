@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+    <meta charset= "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link href = ".wrapper.css" rel = "stylesheet"/>
+</head>
+
+
+<body>
+    <div class = 'wrapper'>
+        <div class = 'header'>
+            <h1>
+                <a href = 'index.html'>
+                    REKLAMA REKLAMA REKLAMA
+                </a>
+            </h1>
+                <ul>
+                    aoaooaoaoaoaoaoaoao
+                </ul>
+                <li>
+                    <a href = 'spele.html'>
+                       Play
+                    </a>
+                </li>
+                <li>
+                    <a href = 'par.html'>
+                       FAQ
+                    </a>
+                </li>
+                <li>
+                    <a href = 'top.html'>
+                       Leaderboard
+                    </a>
+                </li>
+        </div>
+        <div class = 'content'>
+            <h3 class = 'noteikumi'>nepamanams teksts</h3>
+
+            Vards: <input id = 'vards'>
+            <br>
+            Vecums: <input id = 'vecums'>
+            <br>
+            Region: <select id="regions">
+                <option value= "America">America</option>
+                <option value= "Asia">Asia</option>
+                <option value= "Europe">Europe</option>
+                <option value= "Japan">Japan</option>
+            </select>
+            <button onclick="saktSpeli">Become Human</button>
+        </div>
+    </div>
+    <script>
+        function saktSpeli()
+        {
+            let vards = document.querySelector('#vards').vards
+            let vecums = document.querySelector('#vecums').vecums
+            let regions = document.querySelector('#regions').regions
+            console.log(vards)
+            window.location = 'spele.html'
+        }
+    </script>
+</body>
